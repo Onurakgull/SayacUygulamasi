@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Container from '@mui/material/Container';
+import { makeStyles } from '@mui/styles';
+import clockImage from './image/clock.jpg'
+import GeriSayim from './components/GeriSayim'
 
-function App() {
+const useStyles=makeStyles((theme)=>({
+  container:{
+    display:"flex",
+    flexDrection:"row",
+    alignItems:"center",
+    justifyContent:"center",
+    height:"100vh" ,
+    backgroundImage:`url(${clockImage})`,
+    backgroundPosition:"center",
+    backgroundSize:"cover",
+    backgroundRepeat:false, 
+  }
+}));
+const App=() =>{
+  const classes=useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ 
+    <div className={classes.container}>
+      <Container maxWidth="sm"> 
+      <GeriSayim/>
+      </Container>
     </div>
   );
 }
